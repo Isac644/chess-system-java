@@ -36,6 +36,19 @@ public class Board {
 		return pieces[position.getRow()][position.getColumn()];
 	}
 	
+	public Piece removePiece(Position position) throws BoardException{
+		if(!positionExists(position)) {
+			throw new BoardException("Error: Invalid position");
+		}
+		if(!thereIsAPiece(position)) {
+			return null;
+		}
+		Piece aux = piece(position);
+		aux.position = null;
+		pieces[position.getRow()][position.getColumn()] = null;
+		return aux;
+	}
+	
 	public void placePiece(Piece piece, Position position) throws BoardException{
 		if(thereIsAPiece(position)) {
 			throw new BoardException("Error: Already exists a piece on position");
