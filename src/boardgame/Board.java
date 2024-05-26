@@ -58,7 +58,7 @@ public class Board {
 	}
 	
 	public boolean positionExists(int row, int column) {
-		return row <= rows && rows >= 0 && column <= columns && column >= 0;
+		return row <= rows && row >= 0 && column <= columns && column >= 0;
 	}
 	
 	public boolean positionExists(Position position) {
@@ -66,7 +66,7 @@ public class Board {
 	}
 	
 	public boolean thereIsAPiece(Position position) throws BoardException {
-		if(!positionExists(position.getRow(), position.getColumn())) {
+		if(!positionExists(position)) {
 			throw new BoardException("Error: Invalid position");
 		}
 		return pieces[position.getRow()][position.getColumn()] != null;
