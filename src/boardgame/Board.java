@@ -36,14 +36,14 @@ public class Board {
 		return pieces[position.getRow()][position.getColumn()];
 	}
 	
-	public Piece removePiece(Position position) throws BoardException{
+	public Piece removePiece(Position position) {
 		if(!positionExists(position)) {
 			throw new BoardException("Error: Invalid position");
 		}
 		if(!thereIsAPiece(position)) {
 			return null;
 		}
-		Piece aux = piece(position);
+		Piece aux = pieces[position.getRow()][position.getColumn()];
 		aux.position = null;
 		pieces[position.getRow()][position.getColumn()] = null;
 		return aux;

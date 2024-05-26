@@ -32,14 +32,15 @@ public class UI {
 	
 	public static ChessPosition readChessPosition(Scanner sc) {
 		try {
-			String s = sc.next();
-			char column = s.charAt(0);
-			int row = Integer.valueOf(s.substring(0));
-			return new ChessPosition(column, row);
+		String s = sc.next();
+		char row = s.charAt(0);
+		int column = Integer.valueOf(s.substring(1));
+		return new ChessPosition(row, column);
 		}
-		catch (RuntimeException e){
-			throw new InputMismatchException("Error: Invalid position");
+		catch(InputMismatchException e) {
+			System.out.println("Error: invalid position");
 		}
+		return null;
 	}
 	
 	public static void printBoard(ChessPiece[][] pieces) {
