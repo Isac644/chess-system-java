@@ -22,6 +22,10 @@ public class Board {
 		return columns;
 	}
 	
+	public Piece[][] getPieces(){
+		return pieces;
+	}
+	
 	public Piece piece(int row, int column)  throws BoardException {
 		if(!positionExists(row, column)) {
 			throw new BoardException("Error: Invalid position");
