@@ -43,15 +43,15 @@ public class Program {
 				}
 			} catch (ChessException e) {
 				System.out.println(e.getMessage());
-				e.printStackTrace();
+				//e.printStackTrace();
 				sc.nextLine();
 			} catch (BoardException e) {
 				System.out.println(e.getMessage());
-				e.printStackTrace();
+				//e.printStackTrace();
 				sc.nextLine();
 			} catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
-				e.printStackTrace();
+				//e.printStackTrace();
 				sc.nextLine();
 			}
 		}
